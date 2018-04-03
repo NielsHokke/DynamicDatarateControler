@@ -3,7 +3,7 @@
 Project to write own datarate control algorithm for IEEE 802.11 (automatic selection of rate and coding scheme)
 
 ## Paper
-[Cognitive WI-FI: A small step towards online self-learning data rate control](https://github.com/NielsHokke/MAC_Tracker/blob/master/MAC-based%20activity%20tracking%20using%20passive%20sniffing.pdf)
+[Cognitive WI-FI: A small step towards online self-learning data rate control](https://github.com/NielsHokke/DynamicDatarateControler/blob/master/Cognitive%20WI-FI%20A%20small%20step%20towards%20online%20self-learning%20data%20rate%20control.pdf)
 
 ## Getting Started
 
