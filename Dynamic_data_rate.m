@@ -73,19 +73,13 @@ tgacChannel.SampleRate = sr;
 % SNR or packet error rate, for rate selection. The RCA presented in this
 % example estimates the SNR of a received packet.
 
-ForceLearning = 0; % When setting this to 1 and number of packets to multiples of 1000 it will performred a forced learning
-% 
-MaxSNR = 40;
-SNRBinSize = 1;
-AdaptionRate = 1/3; % How big the ifnluence of the new raet should be 0 = not 1 =directly
-LearningSpeed = -1; %percentage of time the algorithm will try another value then the know best
-rng('shuffle')
-if ForceLearning == 1
-    LearnedValues = ones( 10, (MaxSNR/SNRBinSize)+1)*-1;
-end
+ForceLearning = 0;  % When setting this to 1 the algorithm  will perform a forced learning run
+MaxSNR = 40;        % Max observed SNR (Used to determin LearnedValues array size
+SNRBinSize = 1;     % SNR binsize in dB 
+AdaptionRate = 1/3; % How big the influence of the new rate should be: 0 = not 1 =directly
+LearningSpeed = 0.01; %percentage of time the algorithm will try another value then the know best
 
 MCS_custom = 7;
-MCS_OK_Counter = 0;
 
 %% Simulation Parameters
 % In this simulation |numPackets| packets are transmitted through a TGac
@@ -108,6 +102,11 @@ if ForceLearning == 1
 else
     numPackets = 100;   % Number of packets transmitted during the simulation
 end
+rng('shuffle')
+if (ForceLearning == 1) | (exist("LearnedValues")~=1)
+    LearnedValues = ones( 10, (MaxSNR/SNRBinSize)+1)*-1;
+end
+
 
 walkSNR = true; 
 
