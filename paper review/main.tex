@@ -1,0 +1,46 @@
+\documentclass [a4,twoside,11pt] {article}
+
+\usepackage{times}
+
+\setlength{\textwidth}{6in}
+\setlength{\textheight}{10in}
+\setlength{\oddsidemargin}{0.25in}
+\setlength{\evensidemargin}{0.25in}
+
+\hyphenation{practicum-ad-mini-stratie}
+
+\begin{document}
+
+\title{
+   \center {
+      \LARGE{PAPER REVIEW \\ WIRELESS NETWORKING (ET4394) \\ 2017-2018}
+   }
+}
+\author{Jetse Brouwer, 4615964 \\ Niels Hokke, 4610148}
+\date{April 3th, 2018}
+\maketitle
+
+\setcounter{secnumdepth}{1}
+
+% ============================================================================
+
+\section{Paper summarized}
+Pengyu Zhang, Mohammad Rostami, Pan Hu, Deepak Ganesan ``Enabling Practical Backscatter Communication for On-body Sensors'' SIGCOMM ’16, August 22-26, 2016, Florianopolis , Brazil
+
+
+\section{Summary}
+The paper suggests a new way to make backscatter communication possible using of-the-shelf WiFi/Bluetooth components without the use of carrier cancellation. This is done by shifting the carrier signal to an adjacent non-overlapping frequency band which isolates the spectrum of the backscattered signal from the spectrum of the carrier signal. The paper demonstrates that a 20MHz frequency shift is enough for enabling an FS-backscatter tag to communicate with commercial Wifi/Bluetooth radios. The suggested design only consumes 45 $\mu$W and is able to achieve 50kbps up to 4.8m
+
+
+\section{Assessment}
+The paper is well written and clearly structured which makes for an easy read. Every subsection starts with stating a question which is then answered, this makes it very clear which problem they are trying to solve. 
+\\
+When suggesting a new design it's important to make the design verifiable, and to do so the setup must be well defined. The paper clearly states which hardware is used, but does not provide the software. This isn't a large problem as the novelty of the new method is mostly hardware based. The software described uses the Wifi/Bluetooth radio's API's, so documentation should be available online.
+
+
+\section{Potential improvement(s)}
+The paper talks about a low power solution but does not talk about an actual passive system including energy harvesting. As the paper only suggest a new way to communicate this isn't an large improvement, but it would be interesting to see the capabilities of the whole packages as a passive wireless sensor.
+
+Another improvement would be if the authors also published the used software, this would make it easier to get the basic setup running and to make further improvements.
+
+\end{document}
